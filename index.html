@@ -3,8 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Krishna Kumar - Flutter Developer</title>
+    <title id="pageTitle">My Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/data.js" defer></script>
+    <script src="./js/main.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -20,19 +23,12 @@
             <nav class="nav">
                 <a href="#home" class="logo">
                     <span class="logo-mark">KK</span>
-                    <span>Krishna Kumar S</span>
+                    <span id="logoName"></span>
                 </a>
                 <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">
                     <span></span>
                 </button>
-                <div class="nav-links" id="navLinks">
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#education">Education</a>
-                    <a href="#contact" class="nav-cta">Get in touch</a>
-                </div>
+                <div class="nav-links" id="navLinks"></div>
             </nav>
         </div>
     </header>

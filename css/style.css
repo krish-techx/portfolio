@@ -115,6 +115,18 @@ img {
     -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 78%);
 }
 
+/* Scroll progress */
+#progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary-2), var(--primary), var(--accent));
+    z-index: 200;
+    transition: width .1s linear;
+}
+
 /* Layout */
 .wrap {
     width: 100%;
@@ -180,7 +192,6 @@ section {
     background-clip: text;
     color: transparent;
 }
-
 
 /* Header */
 header {

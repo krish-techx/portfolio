@@ -1,6 +1,19 @@
 // Title
 document.title = `${portfolioData.name} - ${portfolioData.role}`;
 
+/* Header scroll state + scroll progress */
+var header = document.getElementById('header');
+var progress = document.getElementById('progress');
+
+function onScroll() {
+    var y = window.scrollY || window.pageYOffset;
+    header.classList.toggle('scrolled', y > 12);
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
 // Logo name
 document.getElementById("logoName").textContent =
     portfolioData.name;

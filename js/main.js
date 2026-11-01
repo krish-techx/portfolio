@@ -20,3 +20,59 @@ portfolioData.header.forEach(item => {
 
     navLinks.appendChild(link);
 });
+
+// Hero
+document.getElementById("heroName").textContent = portfolioData.name;
+document.getElementById("heroRole").textContent = `${portfolioData.role} (${portfolioData.specialization})`;
+document.getElementById("heroDescription").innerHTML = portfolioData.heroDescription;
+
+// Stats
+function renderStats() {
+    const statsContainer = document.getElementById("heroStats");
+
+    statsContainer.innerHTML = portfolioData.stats
+        .map(stat => `
+            <div class="stat">
+                <b data-count="${stat.count}" data-suffix="${stat.suffix}">0</b>
+                <span>${stat.label}</span>
+            </div>
+        `)
+        .join("");
+}
+
+renderStats();
+
+// Counters
+var counters = document.querySelectorAll('[data-count]');
+
+function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    var duration = 1500;
+    var start = null;
+
+    function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+}
+
+if ('IntersectionObserver' in window) {
+    var co = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                co.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.6 });
+    counters.forEach(function (c) { co.observe(c); });
+} else {
+    counters.forEach(function (c) {
+        c.textContent = c.getAttribute('data-count') + (c.getAttribute('data-suffix') || '');
+    });
+}

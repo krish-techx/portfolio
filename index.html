@@ -40,6 +40,67 @@
         </div>
     </header>
 
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="wrap">
+            <div class="hero-grid">
+                <div class="reveal">
+                    <span class="eyebrow">Available for opportunities</span>
+                    <h1>Hi, I'm <span class="grad" id="heroName"></span></h1>
+                    <div class="hero-role">
+                        <span class="bar"></span>
+                        <span id="heroRole"></span>
+                    </div>
+                    <p class="hero-desc" id="heroDescription"> </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            View my work
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M13 6l6 6-6 6" />
+                            </svg>
+                        </a>
+                        <a href="#contact" class="btn btn-ghost">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16v16H4z" />
+                                <path d="m4 7 8 6 8-6" />
+                            </svg>
+                            Contact me
+                        </a>
+                    </div>
+
+                    <div class="stats" id="heroStats"></div>
+                </div>
+
+                <div class="code-window reveal">
+                    <div class="code-bar">
+                        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                        <span class="code-file">developer.dart</span>
+                    </div>
+
+                    <pre class="code-body"><span class="c-cmt">// Flutter · Dart · Clean Architecture</span>
+
+<span class="c-key">class</span> <span class="c-cls">Developer</span> <span class="c-punc">{</span>
+  <span class="c-key">final</span> <span class="c-cls">String</span> name <span class="c-punc">=</span> <span class="c-str">'<span id="codeName"></span>'</span><span class="c-punc">;</span>
+  <span class="c-key">final</span> <span class="c-cls">String</span> role <span class="c-punc">=</span> <span class="c-str">'<span id="codeRole"></span>'</span><span class="c-punc">;</span>
+  <span class="c-key">final</span> <span class="c-cls">String</span> experience <span class="c-punc">=</span> <span class="c-num">'<span id="codeExperience"></span>'</span><span class="c-punc">;</span>
+
+  <span class="c-key">final</span> <span class="c-cls">List</span><span class="c-punc">&lt;</span><span class="c-cls">String</span><span class="c-punc">&gt;</span> stack <span class="c-punc">=</span> <span class="c-punc">[</span>
+    <span class="c-str">'Flutter'</span><span class="c-punc">,</span> <span class="c-str">'Dart'</span><span class="c-punc">,</span> <span class="c-str">'GetX'</span><span class="c-punc">,</span><span class="c-str">'Provider'</span><span class="c-punc">,</span>
+    <span class="c-str">'Bloc'</span><span class="c-punc">,</span> <span class="c-str">'Clean Architecture'</span><span class="c-punc">,</span> <span class="c-str">'REST'</span><span class="c-punc">,</span>
+  <span class="c-punc">];</span>
+
+  <span class="c-cls">Future</span><span class="c-punc">&lt;</span><span class="c-cls">App</span><span class="c-punc">&gt;</span> <span class="c-fn">build</span><span class="c-punc">(</span><span class="c-cls">Idea</span> idea<span class="c-punc">)</span> <span class="c-key">async</span> <span class="c-punc">{</span>
+    <span class="c-key">final</span> design <span class="c-punc">=</span> <span class="c-key">await</span> <span class="c-fn">pixelPerfect</span><span class="c-punc">(</span>idea<span class="c-punc">);</span>
+    <span class="c-key">return</span> <span class="c-fn">ship</span><span class="c-punc">(</span>design<span class="c-punc">,</span> quality<span class="c-punc">:</span> <span class="c-str">'production'</span><span class="c-punc">);</span>
+  <span class="c-punc">}</span>
+<span class="c-punc">}</span></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
 
 </html>

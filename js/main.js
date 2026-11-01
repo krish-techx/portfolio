@@ -94,3 +94,37 @@ if ('IntersectionObserver' in window) {
 document.getElementById("codeName").textContent = portfolioData.name;
 document.getElementById("codeRole").textContent = portfolioData.specialization;
 document.getElementById("codeExperience").textContent = portfolioData.experience;
+
+// About
+function renderAbout() {
+    const about = portfolioData.about;
+    document.getElementById("aboutEyebrow").textContent = about.eyebrow;
+    document.getElementById("aboutTitle").innerHTML = about.title;
+    document.getElementById("aboutParagraphs").innerHTML = about.paragraphs.map(paragraph => `<p>${paragraph}</p>`).join("");
+    document.getElementById("aboutHighlights").innerHTML =
+        about.highlights
+            .map(item => `
+                <div class="highlight">
+                    <div class="ico">${item.icon}</div>
+                    <div>
+                        <b>${item.title}</b>
+                        <p>${item.description}</p>
+                    </div>
+                </div>
+            `)
+            .join("");
+
+    document.getElementById("contactTitle").textContent = about.contact.title;
+    document.getElementById("contactDescription").textContent = about.contact.description;
+    const contact = about.contact;
+}
+renderAbout();
+
+document.getElementById("emailLink").href = `mailto:${portfolioData.about.contact.email}`;
+document.getElementById("emailText").textContent = portfolioData.about.contact.email;
+document.getElementById("phoneLink").href = `tel:${portfolioData.about.contact.phone}`;
+document.getElementById("phoneText").textContent = portfolioData.about.contact.phone;
+document.getElementById("linkedinLink").href = `https://${portfolioData.about.contact.linkedin}`;
+document.getElementById("linkedinText").textContent = portfolioData.about.contact.linkedin;
+document.getElementById("githubLink").href = `https://${portfolioData.about.contact.github}`;
+document.getElementById("githubText").textContent = portfolioData.about.contact.github;

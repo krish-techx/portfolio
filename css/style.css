@@ -627,3 +627,139 @@ header.scrolled {
 .c-fn {
     color: #FFD866;
 }
+
+/* About */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+    gap: 54px;
+    align-items: start;
+}
+
+@media(max-width:900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+}
+
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 18px;
+    font-size: 1.02rem;
+}
+
+.about-text strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.highlight-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.highlight {
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+    padding: 15px 17px;
+    border-radius: 13px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: border-color .25s, background .25s, transform .25s;
+}
+
+.highlight:hover {
+    border-color: var(--border-strong);
+    background: var(--surface-2);
+    transform: translateX(4px);
+}
+
+.highlight .ico {
+    flex: 0 0 32px;
+    height: 32px;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    background: rgba(19, 185, 253, .12);
+    border: 1px solid rgba(19, 185, 253, .25);
+    font-size: .9rem;
+}
+
+.highlight p {
+    font-size: .9rem;
+    color: var(--muted);
+    margin: 0;
+}
+
+.highlight b {
+    color: var(--text);
+    display: block;
+    font-size: .93rem;
+    margin-bottom: 2px;
+}
+
+/* Contact card */
+.contact-card {
+    padding: 26px;
+    border-radius: var(--radius);
+    background: linear-gradient(165deg, rgba(19, 185, 253, .1), rgba(124, 108, 255, .05));
+    border: 1px solid rgba(19, 185, 253, .22);
+}
+
+.contact-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+}
+
+.contact-card>p {
+    color: var(--muted);
+    font-size: .88rem;
+    margin-bottom: 20px;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 0;
+    border-top: 1px solid rgba(255, 255, 255, .07);
+    font-size: .88rem;
+    transition: color .2s;
+}
+
+.contact-row:hover {
+    color: var(--primary);
+}
+
+.contact-row:first-of-type {
+    border-top: none;
+}
+
+.contact-row .ci {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, .06);
+}
+
+.contact-row .ci svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+    color: var(--primary);
+}
+
+.contact-row span {
+    color: var(--muted);
+    word-break: break-all;
+}
+
+.contact-row:hover span {
+    color: var(--text);
+}

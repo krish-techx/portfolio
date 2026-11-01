@@ -14,6 +14,27 @@ function onScroll() {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
+// Scroll reveal
+var revealEls = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    revealEls.forEach(function (el, i) {
+        el.style.transitionDelay = (i % 4) * 70 + 'ms';
+        io.observe(el);
+    });
+} else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+}
+
 // Logo name
 document.getElementById("logoName").textContent =
     portfolioData.name;

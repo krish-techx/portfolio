@@ -89,3 +89,8 @@ if ('IntersectionObserver' in window) {
         c.textContent = c.getAttribute('data-count') + (c.getAttribute('data-suffix') || '');
     });
 }
+
+// Code window
+document.getElementById("codeName").textContent = portfolioData.name;
+document.getElementById("codeRole").textContent = portfolioData.specialization;
+document.getElementById("codeExperience").textContent = portfolioData.experience;

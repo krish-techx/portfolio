@@ -86,4 +86,138 @@ const portfolioData = {
             github: "github.com/krish-techx"
         }
     },
+
+    skills: {
+        skillsEyebrow: "Technical skills",
+        skillsTitle: 'The <span class="grad">toolkit</span>',
+        skillsDescription:
+            "A focused mobile engineering skill set — from Flutter development and architecture to testing, performance, and production releases.",
+        categories: [
+            {
+                icon: "📱",
+                title: "Mobile Development",
+                items: [
+                    "Flutter",
+                    "Dart",
+                    "Android",
+                    "iOS",
+                    "Cross-Platform Development",
+                    "Responsive UI",
+                    "Adaptive UI"
+                ]
+            },
+            {
+                icon: "🔄",
+                title: "State Management",
+                items: [
+                    "GetX",
+                    "BLoC",
+                    "Provider",
+                ]
+            },
+            {
+                icon: "🏗️",
+                title: "Architecture & Patterns",
+                items: [
+                    "Clean Architecture",
+                    "MVVM",
+                    "MVC",
+                    "SOLID Principles",
+                    "Dependency Injection",
+                    "Reusable Widgets"
+                ]
+            },
+            {
+                icon: "🔌",
+                title: "Backend & APIs",
+                items: [
+                    "REST APIs",
+                    "JSON",
+                    "API Integration",
+                    "Firebase Services",
+                    "OneSignal",
+                    "Push Notifications"
+                ]
+            },
+            {
+                icon: "🗄️",
+                title: "Databases & Persistence",
+                items: [
+                    "SQLite",
+                    "Hive",
+                    "Firebase Firestore",
+                    "SharedPreferences",
+                    "Flutter Secure Storage"
+                ]
+            },
+            {
+                icon: "🧪",
+                title: "Testing & Code Quality",
+                items: [
+                    "Unit Testing",
+                    "Widget Testing",
+                    "Integration Testing",
+                    "Flutter Lints",
+                    "Code Reviews"
+                ]
+            },
+            {
+                icon: "⚡",
+                title: "Performance & Security",
+                items: [
+                    "Flutter DevTools",
+                    "Performance Profiling",
+                    "SSL Pinning",
+                    "Code Obfuscation",
+                    "Play Integrity",
+                    "FreeRASP"
+                ]
+            },
+            {
+                icon: "🚀",
+                title: "CI/CD & Release",
+                items: [
+                    "GitHub Actions",
+                    "App Signing",
+                    "Play Store Releases",
+                    "Release Management"
+                ]
+            },
+            {
+                icon: "🧰",
+                title: "Native Integrations",
+                items: [
+                    "Platform Channels",
+                    "Bluetooth Integration",
+                    "FaceRD Integration",
+                    "Android Native APIs"
+                ]
+            },
+            {
+                icon: "🛠️",
+                title: "Tools & Platforms",
+                items: [
+                    "Android Studio",
+                    "VS Code",
+                    "Xcode",
+                    "Postman",
+                    "Git",
+                    "GitHub",
+                    "Figma",
+                    "Jira"
+                ]
+            },
+            {
+                icon: "📋",
+                title: "Development Practices",
+                items: [
+                    "Agile / Scrum",
+                    "Documentation",
+                    "Debugging",
+                    "UI/UX Principles",
+                    "Problem Solving"
+                ]
+            }
+        ]
+    },
 };

@@ -14,27 +14,6 @@ function onScroll() {
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
-// Scroll reveal
-var revealEls = document.querySelectorAll('.reveal');
-
-if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in');
-                io.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-    revealEls.forEach(function (el, i) {
-        el.style.transitionDelay = (i % 4) * 70 + 'ms';
-        io.observe(el);
-    });
-} else {
-    revealEls.forEach(function (el) { el.classList.add('in'); });
-}
-
 // Logo name
 document.getElementById("logoName").textContent =
     portfolioData.name;
@@ -149,3 +128,52 @@ document.getElementById("linkedinLink").href = `https://${portfolioData.about.co
 document.getElementById("linkedinText").textContent = portfolioData.about.contact.linkedin;
 document.getElementById("githubLink").href = `https://${portfolioData.about.contact.github}`;
 document.getElementById("githubText").textContent = portfolioData.about.contact.github;
+
+// Skills
+function renderSkills() {
+    document.getElementById("skillsEyebrow").textContent = portfolioData.skills.skillsEyebrow;
+    document.getElementById("skillsTitle").innerHTML = portfolioData.skills.skillsTitle;
+    document.getElementById("skillsDescription").textContent = portfolioData.skills.skillsDescription;
+
+    const skillsGrid = document.getElementById("skillsGrid");
+
+    skillsGrid.innerHTML = portfolioData.skills.categories.map(category => `
+        <div class="skill-card reveal">
+
+            <div class="skill-head">
+                <span class="si">${category.icon}</span>
+                <h3>${category.title}</h3>
+            </div>
+
+            <div class="chips">
+                ${category.items.map(item => `
+                    <span class="chip">${item}</span>
+                `).join("")}
+            </div>
+
+        </div>
+    `).join("");
+}
+
+renderSkills();
+
+// Scroll reveal
+var revealEls = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    revealEls.forEach(function (el, i) {
+        el.style.transitionDelay = (i % 4) * 70 + 'ms';
+        io.observe(el);
+    });
+} else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+}
